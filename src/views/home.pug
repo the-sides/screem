@@ -1,4 +1,7 @@
 extends layout
 
 block content
-    h1 let's do this...
+    .container
+        img.off(src="images/silent.webp", alt="")
+        img.on.hidden(src="images/loud.jpg", alt="")
+    audio(src="sound/screem.mp3", autoplay=false)

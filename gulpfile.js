@@ -63,13 +63,19 @@ function images(){
             .pipe(dest('dist/images/'))
 }
 
+function sound(){
+    return src(['./src/sound/**/**'])
+            .pipe(dest('dist/sound/'))
+}
+
 const dev = series(
     clean, 
     //vendors,
     scripts, 
     parallel(
         styles, 
-    //    images
+        images, 
+        sound,
         )
     )
 
